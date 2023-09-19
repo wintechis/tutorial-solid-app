@@ -81,11 +81,9 @@ export default function LoginMenu() {
                 <MenuItem>
                   Settings
                 </MenuItem>
-                <MenuItem onClick={() => {
-                  logout();
-                  setLoggedIn(false);
-                  window.location.reload();
-                }}>
+                <MenuItem
+                  //here
+                >
                   Logout
                 </MenuItem>
               </Menu>
