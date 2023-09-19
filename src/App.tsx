@@ -10,11 +10,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(getDefaultSession().info.isLoggedIn);
 
   useEffect(() => {
-    if(!loggedIn) {
-      handleIncomingRedirect({
-        restorePreviousSession: true
-      }).then(info => setLoggedIn(info?.isLoggedIn || false));
-    }
+    // here
   });
 
   return (

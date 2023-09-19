@@ -33,41 +33,7 @@ export default function LoginMenu() {
   const [profile, setProfile] = useState<Profile | undefined>();
 
   useEffect(() => {
-    if(!profile && session.info.webId) {
-      let newProfile: Profile = {
-        name: undefined,
-        image: undefined,
-        oidcIssuer: undefined,
-        preferencesFile: undefined,
-        storage: undefined,
-        privateTypeIndex: undefined,
-        publicTypeIndex: undefined
-      };
-      const parser = new Parser({
-        baseIRI: session.info.webId
-      });
-      session.fetch(session.info.webId)
-        .then(res => res.text())
-        .then(text => parser.parse(text, (error, quad) => {
-            if(error) {
-              toast.error(error.message);
-            } else if(quad) {
-              if(quad.subject.equals(namedNode(session.info.webId!))) {
-                switch (quad.predicate.value) {
-                  case 'http://xmlns.com/foaf/0.1/name':
-                    newProfile.name = quad.object.value;
-                    break;
-                  case 'http://www.w3.org/2006/vcard/ns#hasPhoto':
-                    newProfile.image = quad.object.value;
-                    break;
-                }
-              }
-            } else {
-              setProfile(newProfile);
-            }
-        }))
-        .catch(error => toast.error(error));
-    }
+    //here
   });
 
   return (

@@ -45,10 +45,7 @@ export default function Login() {
                 <Button
                   variant='contained'
                   size='large'
-                  onClick={() => login({
-                    oidcIssuer: oidcIssuer,
-                    clientName: 'Solid GTD',
-                  }).catch(e => toast.error(e.toString()))}
+                  // here
                   sx={{
                     mb: 1
                   }}
